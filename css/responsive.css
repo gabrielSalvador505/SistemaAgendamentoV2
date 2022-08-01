@@ -1,0 +1,80 @@
+@media (MAX-width: 1440px) {
+    #day {
+        bottom: -70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #girl {
+        right: 5%;
+    }
+    #day {
+        height: 150px;
+        bottom: -30%;
+    }
+    #clock {
+        height: 120px;
+        top: -40%;
+    }
+}
+
+@media (max-width: 780px) {
+    #girl {
+        height: 550px;
+    }
+    #clock {
+        left: -30%;
+    }
+    #day {
+        right: -15%;
+    }
+    #description {
+        top: 20%;
+        left: 25%;
+        transform: translate(-50%);
+    }
+    #header .container {
+        width: 100%;
+    }
+    #header .navbar {
+        width: 100%;
+    }
+    .button-mobile {
+        display: inline-flex;
+    }
+    .button-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    #girl {
+        display: none;
+    }
+    #clock {
+        top: -25%;
+        left: -40%;
+    }
+    #day {
+        bottom: -40%;
+        right: -20%;
+    }
+    #description {
+        width: 65%;
+        left: 50%;
+    }
+    #header .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    #clock {
+        top: -25%;
+        left: -40%;
+    }
+    #day {
+        right: -20%;
+        bottom: -25%;
+    }
+}
