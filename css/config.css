@@ -1,3 +1,13 @@
 :root {
-    --primary:
+    --primary: #E55244;
+    --primary-dark: #cf3d30;
+    --secundary: #FCB149;
+    --secundary-light: #ffebcd;
+
+    --modal-primary: #3EB2B2;
+    --modal-primary-light: #cbe7e7;
+
+    --special: 'Alfa Slab One', cursive;
+    --title: 'Roboto', sans-serif;
+    --text: 'Gantari', sans-serif;
 }

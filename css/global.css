@@ -4,4 +4,47 @@
     transition: 0.1s;
     box-shadow: 3px 3px 1px #000;
     font-weight: 700;
+    background-color: #E55244;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+}
+.btn_:hover {
+    background-color: var(--primary-dark);
+}
+.btn_:focus {
+    outline: none;
+}
+.btn__ {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+    transition: 0.1s;
+    font-weight: 700;
+    background-color: #3EB2B2;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    min-width: 130px;
+}
+.btn__:focus {
+    box-shadow: 0 0 0 5px var(--modal-primary-light);
+    outline: none;
+}
+
+
+.title {
+    font-family: var(--title);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.title_ {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+#loginContent {
+    position: absolute;
 }
