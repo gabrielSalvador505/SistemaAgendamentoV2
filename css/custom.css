@@ -2,6 +2,7 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 .body {
     width: 100% !important;
@@ -13,7 +14,11 @@
     background-color: transparent;
     width: 100%;
     overflow-x: hidden;
-    position: absolute;
+    position: fixed;
+    z-index: 50;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    padding: 8px;
 }
 #header .container {
     width: 80%;
@@ -55,7 +60,6 @@
 *******************************************/
 #content-1 {
     height: 80vh;
-    background-color: #ffebcd;
 }
 
 #description {
@@ -96,7 +100,7 @@
     font-family: var(--special);
     margin: 0;
     z-index: 10;
-    color: #E55244;
+    color: var(--primary);
 }
 #description h2 {
     position: relative;
@@ -105,7 +109,7 @@
     font-size: 18px;
     margin: 0;
     z-index: 10;
-    color: #FCB149;
+    color: var(--secundary);
 }
 #description p {
     position: relative;
@@ -133,38 +137,153 @@
     padding: 0px 15px 0px 0px;
 }
 /*******************************************
-*****CONTEÚDO-2*****************************
+*****CONTENT-2******************************
 *******************************************/
 #content-2 {
+    padding: 100px 0;
     height: auto;
     width: 100%;
-    background-color: aliceblue;
-    justify-content: center;
+    text-align: center;
+}
+#content-2 h2{
+    font-weight: 1000;
 }
 
-#content-2 .service-list {
+#list {
+    padding: 20px;
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+}
+
+#list .card {
+    min-width: 25%;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.205);
+
+}
+
+.card.secundary {
+    top: 25px;
+}
+
+.secundary .card-body {
+    height: auto;
+}
+
+/*******************************************
+*****CONTENT-3******************************
+*******************************************/
+#content-3 {
+    padding: 50px 0;
+    width: 100%;
+    height: auto;
+}
+#content-3 h2 {
+    text-align: center;
+    font-family: var(--title);
+    font-weight: 1000;
+    color: #000;
+}
+#team {
+    padding: 50px 0;
     width: 80%;
     height: auto;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+}
+#team .card {
+    width: 300px;
+    height: 450px;
+    margin: 30px;
+    transition: 0.3s;
+}
+#team .card:hover {
+    transform: scale(115%);
+}
+
+#team .card-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 10px;
+}
+
+#team .card-body p {
+    margin-left: 5px;
+}
+#team .card img {
+    width: 100%;
+    height: 100%;
+}
+
+/*******************************************
+*****CONTENT-4******************************
+*******************************************/
+#content-4 {
+    text-align: center;
+    margin: 50px;
+    padding: 100px 0;
+}
+#map {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    margin: 25px;
+}
+
+/*******************************************
+*****CONTENT-5******************************
+*******************************************/
+#content-5 {
+    background-color: #1F1C33;
+    padding: 100px 0;
+}
+
+#remember {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    color: #fafafa;
 }
-
-#content-2 title {
-    display: flex;
-    justify-self: center;
-}
-
-#content-2 .service-item {
-    width: 400px;
-    display: grid;
-}
-
-.service-item p {
-    margin: 5px 15px;
+#remember button {
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 1000;
+    cursor: pointer;
+    width: 150px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
 }
 /*******************************************
-*****MODAL LOGIN****************************
+*****  FOOTER  *****************************
+*******************************************/
+footer {
+    padding: 50px 0 5px 0;
+}
+#footer {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+}
+/*******************************************
+*****MODAL**********************************
 *******************************************/
 .modal {
     position: absolute;
@@ -174,7 +293,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
     padding: 40px 70px 50px 70px;
+    background-color: #fafafa;
 }
 .modal-body .close {
     top: 20px;
@@ -204,9 +325,7 @@ label {
     transform: translate(-50%);
     margin-top: 30px;
 }
-/*******************************************
-*****MODAL CADASTRO*************************
-*******************************************/
+
 #createAccountContent .form-group {
     margin: 15px;
 }
