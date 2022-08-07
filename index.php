@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "conexao.php";
+$pdo = conectar();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -116,7 +121,7 @@
         <h2 class="title">NOSSA EQUIPE</h2>
         <div id="team">
             <div class="card">
-                <img src="/assets/func1.jpg" alt="">
+                <img src="./assets/func1.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title w-100">Amanda Taborda</h5>
                     <p>Manicure</p>
@@ -124,7 +129,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="/assets/func2.jpg" alt="">
+                <img src="./assets/func2.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title w-100">Ana Maria</h5>
                     <p>Manicure</p>
@@ -133,14 +138,14 @@
                 </div>
             </div>
             <div class="card">
-                <img src="/assets/func3.jpg" alt="">
+                <img src="./assets/func3.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title w-100">Andressa Alves</h5>
                     <p>Estilista de cílios</p>
                 </div>
             </div>
             <div class="card">
-                <img src="/assets/func4.jpg" alt="">
+                <img src="./assets/func4.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title w-100">Claudia Silva</h5>
                     <p>Esteticista</p>
@@ -180,17 +185,17 @@
             <div class="modal-content" id="loginContent">
                 <div class="modal-body">
                     <h2 class="modal-title">Login</h2>
-                    <form>
+                    <form method="POST">
                         <div class="form-group">
                           <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email" placeholder="Insira seu Email">
+                          <input type="email" class="form-control" id="email" name="usuario" placeholder="Insira seu Email">
                         </div>
                         <div class="form-group">
                           <label for="pass">Senha</label>
-                          <input type="password" class="form-control" id="pass" placeholder="Senha">
+                          <input type="password" class="form-control" id="pass" name="senhaa" placeholder="Senha">
                           <a href="#" id="passHelp" class="form-text text-muted">Esqueceu sua senha?</a>
                         </div>
-                        <button type="submit" class="btn__">Confirmar</button>
+                        <button type="submit" class="btn__" name="BtnEntrar">Confirmar</button>
                         <small  class="form-text text-muted text-center">Não possui uma conta? <a href="#createAccountModal" data-toggle="modal">Crie uma</a></small>
                       </form>
                 </div>
@@ -205,25 +210,33 @@
                 <div class="modal-body">
                         <h2 class="modal-title">Cadastrar</h2>
                         <button class="close" data-dismiss="modal" aria-label="Close"><i class=" fa-solid fa-x"></i></button>
-                    <form>
+                    <form method="POST">
                         <div class="form-group">
                           <label for="name">Nome</label>
-                          <input type="text" class="form-control" id="name" name="contact" placeholder="Insira seu Nome">
+                          <input type="text" class="form-control" id="name" name="nome" placeholder="Insira seu Nome">
                         </div>
                         <div class="form-group">
                           <label for="contact">Telefone</label>
-                          <input type="text" class="form-control" id="contact" name="contact" placeholder="Telefone para contato">
+                          <input type="text" class="form-control" id="contact" name="telefone" placeholder="Telefone para contato">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Insira seu Email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Insira seu Email">
+                          </div>
+                          <div class="form-group">
+                            <label for="contact">Data Nascimento</label>
+                            <input type="date" class="form-control" id="date" name="datanasc"placeholder="Insira Sua data de nascimento">
+                          </div>
+                          <div class="form-group">
+                            <label for="contact">Endereço</label>
+                            <input type="text" class="form-control" id="endereço" name="endereco"placeholder="Insira seu endereço">
                           </div>
                           <div class="form-group">
                             <label for="pass">Senha</label>
-                            <input type="password" class="form-control" id="pass" placeholder="Crie uma senha">
+                            <input type="password" class="form-control" id="pass" name="senha"placeholder="Crie uma senha">
                             <small class="text-form text-muted">Você deverá se lembrar depois</small>
                           </div>
-                        <button type="submit" class="btn__">Criar</button>
+                        <button type="submit" name="btnSalvar"class="btn__">Criar</button>
                       </form>
                 </div>
             </div>
@@ -234,60 +247,56 @@
     <script src="js/jquery-slim.min.js"></script>
     <script src="js/poopper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-<!--<h1 class="title">Serviços disponíveis no espaço</h1>
-        <div class="service-list">
-            <div class="bg-blur"></div>
-            <div class="service-item">
-                <h2>ALONGAMENTOS DE UNHA</h2>
-                <p>Tradicional</p>
-                <p>Baby boomer</p>
-                <p>encapsulada</p>
-                <p>Francesa reversa</p>
-                <p>Blindagem</p>
-                <p>Banho de Cristal</p>
-                <p>Manutenção</p>
-            </div>
-            <div class="service-item">
-                <h2>ESMALTAÇÃO</h2>
-                <p>Em gel</p>
-                <p>Tradicional</p>
-            </div>
-            <div class="service-item">
-                <h2>UNHAS</h2>
-                <p>Manicure</p>
-                <p>Pedicure</p>
-                <p>Pé e mão</p>
-                <h3>Adicionais</h3>
-                <p>Decoração com joias</p>
-                <p>Decoração com adesivos</p>
-            </div>
-            <div class="service-item">
-                <h2>SPA DOS PÉS</h2>
-                <p>Spa Simples</p>
-                <p>Spa com pedicure</p>
-            </div>
-            <div class="service-item">
-                <h2>ESMALTAÇÃO EM GEL</h2>
-                <p>Manicure</p>
-                <p>Pedicure</p>
-                <p>Pé e mão</p>
-            </div>
-            <div class="service-item">
-                <h2>CABELO</h2>
-                <p>Escova</p>
-                <p>Corte</p>
-                <p>Tintura</p>
-                <p>Progressiva</p>
-                <p>Luzes</p>
-                <p>Penteado</p>
-            </div>
-            <div class="service-item">
-                <h2>OUTROS</h2>
-                <p>Extenção de cílios</p>
-                <p>Design de sobrancelhas</p>
-                <p>Buço</p>
-            </div>
-        </div>
-    </div>-->
 </body>
 </html>
+<?php
+
+//CADASTRO DO FORMULARIO
+
+     if(isset($_POST['btnSalvar'])) {
+    $nome = isset($_POST['nome'])? $_POST['nome'] : null;
+    $telefone = isset($_POST['telefone'])? $_POST['telefone'] : null;
+    $email = isset($_POST['email'])? $_POST['email'] : null;
+    $senha = isset($_POST['senha'])? $_POST['senha'] : null;
+    $datanasc = isset($_POST['datanasc'])? $_POST['datanasc'] : null;
+    $endereco = isset($_POST['endereco'])? $_POST['endereco'] : null;
+
+   $sql = "INSERT INTO cliente (nome_cliente, telefone_cliente, email_cliente, senha_cliente, data_nasc, endereco_cliente) VALUES (:n, :t, :e, :s, :d, :en);";
+     //preparando o sql para receber os dados
+    $stmt = $pdo->prepare($sql);
+     //troca dos dados pelo que esta vindo no formulário
+    $stmt->bindParam(':n', $nome);
+    $stmt->bindParam(':t', $telefone);
+    $stmt->bindParam(':e', $email);
+    $stmt->bindParam(':s', $senha);
+    $stmt->bindParam(':d', $datanasc);
+    $stmt->bindParam(':en', $endereco);
+    if ($stmt->execute()) {
+        echo "Registro inserido com sucesso";
+    }
+     }
+//LOGIN FUNCIONAL 
+     if (isset($_POST['BtnEntrar'])) {
+        $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : null;
+        $senhaa = isset($_POST['senhaa']) ? ($_POST['senhaa']) : null;
+    
+        if(empty($usuario) && empty($senhaa)){
+           echo "Necessário informar usuario e senha";
+         exit();
+        }
+        
+       $sql2 = "SELECT email_cliente, senha_cliente, nome_cliente FROM cliente WHERE email_cliente = :u AND senha_cliente = :ss";
+    
+        $stmt2 = $pdo->prepare($sql2);
+        $stmt2->bindParam(':u', $usuario);
+        $stmt2->bindParam(':ss', $senhaa);
+      $stmt2->execute();
+       $user = $stmt2->fetch();
+        if($stmt2->rowCount()> 0){
+           echo "Seja bem vindo"." ". $usuario;
+        }else{
+            echo "Usuário ou senha invalidos";
+            exit();
+       }
+}
+?> 
