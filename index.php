@@ -44,7 +44,7 @@ $pdo = conectar();
                 </button>
                 <div class="collapse navbar-collapse flex-column" id="navbarNavAlt">
                     <ul class="navbar nav flex-none">
-                        <li class="nav-item"><a href="#" class="nav-link active">Contato</a></li>
+                        <li class="nav-item"><a href="#footer" class="nav-link active">Contato</a></li>
                         <li class="nav-item"><a href="#content-2" class="nav-link active">Serviços</a></li>
                         <li class="nav-item"><a href="#content-3" class="nav-link active">Nossa Equipe</a></li>
                         <li class="nav-item"><a href="#content-4" class="nav-link active">Localização</a></li>
@@ -65,60 +65,14 @@ $pdo = conectar();
             <h1>Espaço Kelly Silvestre</h1>
             <p>Para economizar o seu tempo e descomplicar o agendamento utilize nosso sistema, em <span class="underline">menos de 5 minutos</span> o agendamento é finalizado.</p>
             <div class="go-to">
-                <a href="#">Agendar</a> <i class="fa-solid fa-arrow-right fa-lg"></i>
+                <a href="#">Agendar</a> <i class="fa-solid fa-arrow-right fa-xl"></i>
             </div>
         </div>
     </div>
     <!--//LANDING-->
-    <!--SERVIÇOS-->
-    <div id="content-2">
-        
-        <h2>SERVIÇOS DO ESPAÇO</h2>
-        <div id="list">
-              <div class="card secundary">
-                <div class="card-body">
-                    <h5 class="card-title">UNHAS</h5>
-                    <p>Manicure</p>
-                    <p>Pedicure</p>
-                    <p>Pé e mão</p>
-                    <h5 class="card-title">Adicionais</h5>
-                    <p>Decoração com joias</p>
-                    <p>Decoração com adesivos</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">ALONGAMENTOS DE UNHA</h5>
-                  <p>Tradicional</p>
-                  <p>Baby boomer</p>
-                  <p>encapsulada</p>
-                  <p>Francesa reversa</p>
-                  <p>Blindagem</p>
-                  <p>Banho de Cristal</p>
-                  <p>Manutenção</p>
-                  <h5 class="card-title">Esmaltação</h5>
-                  <p>Em gel</p>
-                  <p>Tradicional</p>
-                </div>
-              </div>
-              <div class="card secundary">
-                <div class="card-body">
-                    <h5 class="card-title">CABELO</h5>
-                    <p>Escova</p>
-                    <p>Corte</p>
-                    <p>Tintura</p>
-                    <p>Progressiva</p>
-                    <p>Luzes</p>
-                    <p>Penteado</p>
-                </div>
-              </div>
-          
-        </div>
-    </div>
-    <!--//SERVIÇOS-->
     <!--EQUIPE-->
     <div id="content-3">
-        <h2 class="title">NOSSA EQUIPE</h2>
+        <h2>NOSSA EQUIPE</h2>
         <div id="team">
             <div class="card">
                 <img src="./assets/func1.jpg" alt="">
@@ -154,9 +108,58 @@ $pdo = conectar();
         </div>
     </div>
     <!--//EQUIPE-->
+    <!--SERVIÇOS-->
+    <div id="content-2">
+        
+        <h2>SERVIÇOS DO ESPAÇO</h2>
+        <div id="list">
+              <div class="card secundary">
+                <div class="card-body">
+                    <h5 class="card-title">UNHAS</h5>
+                    <p>Manicure</p>
+                    <p>Pedicure</p>
+                    <p>Pé e mão</p>
+                    <div class="plus">
+                        <h5 class="card-title">Adicionais</h5>
+                        <p>Decoração com joias</p>
+                        <p>Decoração com adesivos</p>
+                    </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">ALONGAMENTOS DE UNHA</h5>
+                  <p>Tradicional</p>
+                  <p>Baby boomer</p>
+                  <p>encapsulada</p>
+                  <p>Francesa reversa</p>
+                  <p>Blindagem</p>
+                  <p>Banho de Cristal</p>
+                  <p>Manutenção</p>
+                  <div class="plus">
+                    <h5 class="card-title">Esmaltação</h5>
+                    <p>Em gel</p>
+                    <p>Tradicional</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card secundary">
+                <div class="card-body">
+                    <h5 class="card-title">CABELO</h5>
+                    <p>Escova</p>
+                    <p>Corte</p>
+                    <p>Tintura</p>
+                    <p>Progressiva</p>
+                    <p>Luzes</p>
+                    <p>Penteado</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <!--//SERVIÇOS-->
     <!--LOCAL-->
     <div id="content-4">
-        <h2>Onde nos encontrar</h2>
+        <h2>ONDE NOS ESNCONTRAR</h2>
         <div id="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.420882736537!2d-53.4629567!3d-24.951791099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d40efa5034f7%3A0xbd8d72a090da37bd!2sR.%20Recife%2C%20570%20-%20Centro%2C%20Cascavel%20-%20PR%2C%2085810-030!5e0!3m2!1spt-BR!2sbr!4v1659834882666!5m2!1spt-BR!2sbr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -175,7 +178,12 @@ $pdo = conectar();
     <!--FOOTER-->
     <footer>
         <div id="footer">
-            <p class="text-center justify-content-end d-flex">&copy; Kaoê Henrique e Gabriel Salvador. Todos os direitos reservados</p>
+            <div class="social">
+              <i class="fa-brands fa-instagram fa-2xl"></i>
+              <i class="fa-brands fa-whatsapp fa-2xl"></i>
+              <i class="fa-brands fa-facebook fa-2xl"></i>
+            </div>
+            <p class="copy justify-center">&copy; Kaoê Henrique e Gabriel Salvador. Todos os direitos reservados</p>
         </div>
     </footer>
     <!--//FOOTER-->
@@ -183,17 +191,23 @@ $pdo = conectar();
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content" id="loginContent">
-                <div class="modal-body">
+                <div class="modal-header">
                     <h2 class="modal-title">Login</h2>
+                </div>
+                <div class="modal-body">
                     <form method="POST">
                         <div class="form-group">
                           <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email" name="usuario" placeholder="Insira seu Email">
+                          <input type="email" class="form-control" id="email" name="usuario" placeholder="Insira seu Email" required/>
                         </div>
                         <div class="form-group">
                           <label for="pass">Senha</label>
-                          <input type="password" class="form-control" id="pass" name="senhaa" placeholder="Senha">
+                          <input type="password" class="form-control" id="pass" name="senhaa" placeholder="Senha" required/>
                           <a href="#" id="passHelp" class="form-text text-muted">Esqueceu sua senha?</a>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="check" id="check">
+                            <label for="check" id="label-check">Manter conectado?</label>
                         </div>
                         <button type="submit" class="btn__" name="BtnEntrar">Confirmar</button>
                         <small  class="form-text text-muted text-center">Não possui uma conta? <a href="#createAccountModal" data-toggle="modal">Crie uma</a></small>
@@ -207,35 +221,55 @@ $pdo = conectar();
     <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content" id="createAccountContent">
+                <div class="modal-header">
+                    <h2 class="modal-title">Cadastrar</h2>
+                </div>
                 <div class="modal-body">
-                        <h2 class="modal-title">Cadastrar</h2>
-                        <button class="close" data-dismiss="modal" aria-label="Close"><i class=" fa-solid fa-x"></i></button>
                     <form method="POST">
-                        <div class="form-group">
-                          <label for="name">Nome</label>
-                          <input type="text" class="form-control" id="name" name="nome" placeholder="Insira seu Nome">
-                        </div>
-                        <div class="form-group">
-                          <label for="contact">Telefone</label>
-                          <input type="text" class="form-control" id="contact" name="telefone" placeholder="Telefone para contato">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Insira seu Email">
-                          </div>
+                      <div class="row">
+                        <div class="col">
                           <div class="form-group">
-                            <label for="contact">Data Nascimento</label>
-                            <input type="date" class="form-control" id="date" name="datanasc"placeholder="Insira Sua data de nascimento">
+                            <label for="name">Nome</label>
+                            <input type="text" class="form-control" id="name" name="nome" placeholder="Insira seu Nome" required/>
                           </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-group">
+                              <label for="contact">Data de Nascimento</label>
+                              <input type="date" class="form-control" id="date" name="datanasc"placeholder="Insira Sua data de nascimento" required/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="contact">Telefone</label>
+                            <input type="text" class="form-control" id="contact" name="telefone" placeholder="Telefone para contato" required/>
+                          </div>
+                        </div>
+                        <div class="col">
                           <div class="form-group">
                             <label for="contact">Endereço</label>
-                            <input type="text" class="form-control" id="endereço" name="endereco"placeholder="Insira seu endereço">
+                            <input type="text" class="form-control" id="endereço" name="endereco"placeholder="Insira seu endereço" required/>
                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
                           <div class="form-group">
-                            <label for="pass">Senha</label>
-                            <input type="password" class="form-control" id="pass" name="senha"placeholder="Crie uma senha">
-                            <small class="text-form text-muted">Você deverá se lembrar depois</small>
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Insira seu Email" required/>
                           </div>
+                        </div>
+                          <div class="col-6">
+                            <div class="form-group">
+                              <label for="pass">Senha</label>
+                              <input type="password" class="form-control" id="pass" name="senha"placeholder="Crie uma senha" required/>
+                              <small class="text-form text-muted">Você deverá se lembrar depois</small>
+                            </div>
+                          </div>
+                        </div>
+        
                         <button type="submit" name="btnSalvar"class="btn__">Criar</button>
                       </form>
                 </div>

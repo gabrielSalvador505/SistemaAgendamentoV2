@@ -60,6 +60,7 @@
 *******************************************/
 #content-1 {
     height: 80vh;
+    background-color: #ffefcc;
 }
 
 #description {
@@ -98,25 +99,29 @@
 #description h1 {
     position: relative;
     font-family: var(--special);
+    font-size: 48px;
     margin: 0;
     z-index: 10;
-    color: var(--primary);
+    color: #E76E58;
+    text-shadow: 3px 3px 0px #EAA457;
 }
 #description h2 {
     position: relative;
     font-family: var(--title);
+    font-weight: 1000;
     text-transform: uppercase;
     font-size: 18px;
     margin: 0;
     z-index: 10;
-    color: var(--secundary);
+    color: #EAA457;
 }
 #description p {
     position: relative;
     font-family: var(--text);
-    font-size: 16px;
+    font-size: 18px;
     margin: 25px 0;
     z-index: 10;
+    color: #EAA457;
 }
 
 #description span {
@@ -130,23 +135,29 @@
     align-items: center;
 }
 #description a {
-    color: #000;
+    color: #E76E58;
     font-weight: 500;
     font-size: 26px;
+    font-family: var(--special);
     text-decoration: underline;
     padding: 0px 15px 0px 0px;
+}
+#description i {
+    color: #E76E58;
 }
 /*******************************************
 *****CONTENT-2******************************
 *******************************************/
 #content-2 {
-    padding: 100px 0;
+    padding: 50px 0;
     height: auto;
     width: 100%;
     text-align: center;
+    background-image: linear-gradient(to bottom right, #F0F2F2, #B2B8E1);
 }
 #content-2 h2{
-    font-weight: 1000;
+    font-weight: 500;
+    font-family: var(--text);
 }
 
 #list {
@@ -163,34 +174,39 @@
 
 #list .card {
     min-width: 25%;
-    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.205);
+    box-shadow: 0px 30px 50px 1px rgba(0, 0, 0, 0.205);
+}
 
+#list .card-body {
+    padding: 30px;
 }
 
 .card.secundary {
     top: 25px;
+    height: 330px;
 }
 
-.secundary .card-body {
-    height: auto;
+.card .plus {
+    padding: 1px 10px;
+    border-left: 4px solid #a4ace2;
+    background-color: #b6bbe01f;
 }
 
 /*******************************************
 *****CONTENT-3******************************
 *******************************************/
 #content-3 {
-    padding: 50px 0;
+    padding-top: 50px;
     width: 100%;
     height: auto;
 }
 #content-3 h2 {
     text-align: center;
-    font-family: var(--title);
-    font-weight: 1000;
-    color: #000;
+    font-weight: 500;
+    font-family: var(--text);
 }
 #team {
-    padding: 50px 0;
+    padding: 30px 0;
     width: 80%;
     height: auto;
     position: relative;
@@ -233,7 +249,12 @@
 #content-4 {
     text-align: center;
     margin: 50px;
-    padding: 100px 0;
+    padding: 50px 0;
+}
+
+#content-4 h2 {
+    font-weight: 500;
+    font-family: var(--text);
 }
 #map {
     position: relative;
@@ -261,6 +282,9 @@
     align-items: center;
     color: #fafafa;
 }
+#remember h1 {
+    font-family: var(--text);
+}
 #remember button {
     padding: 10px;
     border-radius: 10px;
@@ -277,16 +301,39 @@ footer {
     padding: 50px 0 5px 0;
 }
 #footer {
+    display: flex;
     position: relative;
+    align-items: center;
     left: 50%;
     transform: translate(-50%);
     width: 80%;
+}
+
+#footer .copy {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 20px;
+}
+#footer .social {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+#footer .fa-brands {
+    color: #1F1C33;
+    cursor: pointer;
+
 }
 /*******************************************
 *****MODAL**********************************
 *******************************************/
 .modal {
     position: absolute;
+    top: 10%;
 }
 .modal-body {
     display: flex;
@@ -297,13 +344,18 @@ footer {
     padding: 40px 70px 50px 70px;
     background-color: #fafafa;
 }
-.modal-body .close {
-    top: 20px;
-    right: 20px;
+.modal-header {
+    justify-content: center;
+    align-items: center;
+    font-family: var(--text);
 }
-.modal-body .modal-title {
-    font-family: var(--special);
-    margin-bottom: 15px;
+.modal-header button {
+    position: absolute;
+    top: 0;
+    right: 50px;
+}
+.modal-header h2 {
+    align-self: center;
 }
 .modal form {
     width: 100%;
@@ -314,6 +366,12 @@ label {
     text-transform: uppercase;
     font-weight: 700;
     
+}
+
+#label-check {
+    font-family: var(--text);
+    text-transform: none;
+    font-weight: 500;
 }
 .modal input:focus {
     border-color: var(--modal-primary);
