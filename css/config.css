@@ -12,4 +12,7 @@
     --special: 'Alfa Slab One', cursive;
     --title: 'Roboto', sans-serif;
     --text: 'Gantari', sans-serif;
+
+    --error-color: #e63636;
+    --error-color2: #e6a2a2;
 }

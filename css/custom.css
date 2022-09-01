@@ -59,7 +59,7 @@
 *****CONTEÚDO-1*****************************
 *******************************************/
 #content-1 {
-    height: 80vh;
+    height: 800px;
     background-color: #ffefcc;
 }
 
@@ -173,7 +173,7 @@
 }
 
 #list .card {
-    min-width: 25%;
+    min-width: 300px;
     box-shadow: 0px 30px 50px 1px rgba(0, 0, 0, 0.205);
 }
 
@@ -261,7 +261,7 @@
     left: 50%;
     transform: translate(-50%);
     width: 80%;
-    margin: 25px;
+    min-width: 600px;
 }
 
 /*******************************************
@@ -349,23 +349,16 @@ footer {
     align-items: center;
     font-family: var(--text);
 }
-.modal-header button {
-    position: absolute;
-    top: 0;
-    right: 50px;
-}
-.modal-header h2 {
-    align-self: center;
-}
+
 .modal form {
     width: 100%;
     height: 100%;
 }
-label {
+
+.modal label {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    
 }
 
 #label-check {
@@ -373,10 +366,12 @@ label {
     text-transform: none;
     font-weight: 500;
 }
+
 .modal input:focus {
     border-color: var(--modal-primary);
     box-shadow: 0 0 0px 5px var(--modal-primary-light);
 }
+
 .modal button {
     position: relative;
     left: 50%;
@@ -386,4 +381,11 @@ label {
 
 #createAccountContent .form-group {
     margin: 15px;
+}
+
+#formRegister .span-required {
+    font-family: var(--text);
+    color: var(--error-color);
+    margin: 0 0 0 5px;
+    visibility: hidden;
 }
