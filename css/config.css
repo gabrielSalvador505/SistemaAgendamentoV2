@@ -6,10 +6,13 @@
     --secundary-dark: #ffa82e;
     --secundary-light: #f5e4b8;
 
-    --modal-primary: #3EB2B2;
-    --modal-primary-light: #cbe7e7;
+    --modal-primary: #5DAFFF;
+    --modal-primary-light: #c4e1ff;
 
     --special: 'Alfa Slab One', cursive;
     --title: 'Roboto', sans-serif;
     --text: 'Gantari', sans-serif;
+
+    --error-color: #e63636;
+    --error-color2: #e6a2a2;
 }
