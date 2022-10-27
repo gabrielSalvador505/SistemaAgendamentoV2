@@ -1,17 +1,22 @@
 .btn_ {
-    border-radius: 10px;
+    border: none;
+    border-radius: 25px;
     padding: 10px 15px;
-    transition: 0.1s;
-    box-shadow: 3px 3px 1px #000;
+    align-self: center;
+    transition: 0.5s;
     font-weight: 700;
-    background-color: #5DAFFF;
-    color: #fff;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.2px;
     cursor: pointer;
+    background-color: #fff;
+    font-size: 20px;
+    color: black;
+    margin: 10px;
 }
 .btn_:hover {
-    background-color: #3d9cfc;
+    background-color: rgb(35, 0, 100);
+    color: #fff;
+    text-decoration: none;
 }
 
 .btn_:focus {
@@ -19,22 +24,23 @@
 }
 
 .btn__ {
-    border-radius: 10px;
     border: none;
+    border-radius: 25px;
     padding: 10px 15px;
-    transition: 0.1s;
+    align-self: center;
+    transition: 0.5s;
     font-weight: 700;
-    background-color: #5DAFFF;
-    color: #fff;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.2px;
     cursor: pointer;
-    min-width: 130px;
+    background-color: rgb(230, 230, 230);
+    font-size: 20px;
+    color: #000;
 }
 .btn__:hover {
-    box-shadow: 0 0 0 5px var(--modal-primary-light);
-    outline: none;
-    background-color: #3d9cfc;
+    background-color: rgb(35, 0, 100);
+    color: #fff;
+    text-decoration: none;
 }
 
 
@@ -51,8 +57,9 @@
     font-family: 'Gantari', sans-serif;
 }
 
-#loginContent {
-    position: absolute;
+
+a:hover {
+    text-decoration: none;
 }
 
 p {

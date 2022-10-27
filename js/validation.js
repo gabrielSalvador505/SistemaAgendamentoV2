@@ -1,7 +1,7 @@
 const form = document.getElementById('formRegister');
 const campos = document.querySelectorAll('.required');
 const spans = document.querySelectorAll('.span-required')
-const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.?([a-z]+)?$/i;
 
 function setError(index) {
 	campos[index].style.border = '2px solid var(--error-color)';
@@ -23,8 +23,8 @@ function nameValidate() {
   }
 }
 
-function telValidate() {
-	if (campos[1].value.length < 16) {
+function phoneValidate() {
+	if (campos[1].value.length < 15) {
 		setError(1);
 	} else {
 		removeError(1);
@@ -36,5 +36,21 @@ function emailValidate() {
 		setError(2);
 	} else {
 		removeError(2);
+	}
+}
+
+function passValidate() {
+	if (campos[3].value.length < 8) {
+		setError(3);
+	} else {
+		removeError(3);
+	}
+}
+
+function passConfirm() {
+	if (campos[4].value != campos[3].value) {
+		setError(4);
+	} else {
+		removeError(4)
 	}
 }
