@@ -12,7 +12,7 @@
         
         <div id="userArea">
           <h5 class="text">olá, <?php echo ($_SESSION['user']) ?> | </h5>
-          <a href="../pages/logOut.php" class="text">
+          <a href="../items/logOut.php" class="text">
             <h5>sair</h5>
           </a>
         </div>

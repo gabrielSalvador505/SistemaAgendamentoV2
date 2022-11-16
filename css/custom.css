@@ -1,426 +1,344 @@
 * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 .body {
-    width: 100% !important;
+  width: 100% !important;
 }
 /*******************************************
 *****HEADER*********************************
 *******************************************/
 #header {
-    width: 100%;
-    overflow-x: hidden;
-    position: fixed;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(128, 78, 228);
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(128, 78, 228);
 }
 #header .container {
-    width: 80%;
+  width: 80%;
 }
 
 .logo-img {
-    height: 140px;
-    width: 140px;
+  height: 140px;
+  width: 140px;
 }
 
 #userArea {
-    display: flex;
-    position: relative;
-    align-items: center;
-    color: rgb(35, 0, 100);
-    font-weight: bold;
+  display: flex;
+  position: relative;
+  align-items: center;
+  color: rgb(35, 0, 100);
+  font-weight: bold;
 }
 
 #userArea a {
-    text-decoration: none;
-    color: rgb(35, 0, 100);
+  text-decoration: none;
+  color: rgb(35, 0, 100);
 }
 
 #userArea h5 {
-    margin: 0px 2px;
+  margin: 0px 2px;
 }
 
 /*******************************************
 *****LANDING PAGE***************************
 *******************************************/
 #indexContainer {
-    height: 100vh;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 #indexTop {
-    background-color: rgb(128, 78, 228);
-    height: 70vh;
-    min-height: 600px;
+  background-color: rgb(128, 78, 228);
+  height: 70vh;
+  min-height: 600px;
 }
 #show {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: auto;
-    height: auto;
-    font-size: 55px;
-    color: #fff;
-    
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+  height: auto;
+  font-size: 55px;
+  color: #fff;
 }
 #show h1 {
-    font-family: var(--special);
-    font-size: 55px;
-    text-shadow: 2px 2px rgb(35, 0, 100);
-    letter-spacing: 5px;
+  font-family: var(--special);
+  font-size: 55px;
+  text-shadow: 2px 2px rgb(35, 0, 100);
+  letter-spacing: 5px;
 }
 #show h2 {
-    color: rgb(35, 0, 100);
-    font-family: var(--title);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 25px;
-    margin: 0;
+  color: rgb(35, 0, 100);
+  font-family: var(--title);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0;
 }
 #show p {
-    color: rgb(35, 0, 100);
-    font-family: var(--text);
-    font-size: 25px;
-    margin: 25px 0;
+  color: rgb(35, 0, 100);
+  font-family: var(--text);
+  font-size: 25px;
+  margin: 25px 0;
 }
 /*******************************************
 *****LOGIN PAGE******************************
 *******************************************/
 
 #login {
-    width: 25vw;
-    height: 55vh;
-    min-height: 500px;
-    min-width: 400px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    border-radius: 10px;
-    background-color: #fff;
+  width: 25vw;
+  height: 55vh;
+  min-height: 500px;
+  min-width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 #loginPage h1 {
-    font-family: var(--text);
-    margin-bottom: 30px;
+  font-family: var(--text);
+  margin-bottom: 30px;
 }
 #loginPage form {
-    width: 90%;
+  width: 90%;
 }
 #loginPage .form-group {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 #loginPage .form-group label {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 #loginPage .form-control {
-    width: 100%;
+  width: 100%;
 }
 #loginPage button {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    margin: 25px 0;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 25px 0;
 }
 
 #loginPage #link {
-    text-decoration: underline;
-    color: var(--modal-primary);
-    cursor: pointer;
+  text-decoration: underline;
+  color: var(--modal-primary);
+  cursor: pointer;
 }
 
 #createAccount {
-    width: auto;
-    min-width: 700px;
-    height: 75vh;
-    min-height: 600px;
-    padding: 10px;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    border-radius: 10px;
-    background-color: #fff;
+  width: auto;
+  min-width: 700px;
+  height: 75vh;
+  min-height: 600px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+  background-color: #fff;
 }
 #loginPage .back-arrow {
-    color: #000;
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    cursor: pointer;
+  color: #000;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  cursor: pointer;
 }
 #createAccount .span-required {
-    visibility: hidden;
-    color: var(--error-color);
+  visibility: hidden;
+  color: var(--error-color);
 }
 
 /*******************************************
 *****SCHEDULING PAGE************************
 *******************************************/
-
-#containerAgendamento {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-    height: auto;
-    width: 40%;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+#form_agenda {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-#containerAgendamento h1 {
-    text-align: center;
-    margin-bottom: 70px;
+#form_agenda label:hover {
+  background-color: rgb(128, 78, 228);
+  color: #fff;
 }
 
-#containerAgendamento input {
-    margin: 5px;
+#form_agenda label span {
+  z-index: 1;
+}
+
+#form_agenda label input[type="radio"] {
+  all: unset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#form_agenda label input[type="radio"]:checked {
+  background-color: rgb(128, 78, 228);
+  border-radius: 8px;
+}
+
+#form_agenda label input[type="radio"]:checked + span {
+  color: #fff;
+}
+
+/*servico*/
+#container_servico {
+  position: relative;
+  display: flex;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+#container_servico label {
+  background: #fff no-repeat center center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  min-width: 140px;
+  padding: 0 10px;
+  margin: 0 10px;
+  transition: 0.5s;
+  border-radius: 8px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  font-weight: bolder;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #content-2 {
-    padding: 50px 0;
-    height: auto;
-    width: 100%;
-    text-align: center;
-    background-image: linear-gradient(to bottom right, #F0F2F2, #B2B8E1);
-}
-#content-2 h2{
-    font-weight: 500;
-    font-family: var(--text);
+/*funcionario*/
+#container_funcionario {
+  position: relative;
+  display: flex;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
 }
 
-#list {
-    padding: 20px;
-    width: 60%;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
+
+#container_funcionario label {
+  background: #fff no-repeat center center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  min-width: 120px;
+  padding: 0 10px;
+  margin: 0 10px;
+  transition: 0.5s;
+  border-radius: 8px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  font-weight: bolder;
 }
 
-#list .card {
-    min-width: 300px;
-    box-shadow: 0px 30px 50px 1px rgba(0, 0, 0, 0.205);
+/*dia*/
+
+#container_dia {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0;
 }
 
-#list .card-body {
-    padding: 30px;
+#container_dia label {
+  background: #fff no-repeat center center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  min-width: 50px;
+  padding: 0;
+  margin: 10px;
+  transition: 0.5s;
+  border-radius: 8px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  font-weight: bolder;
 }
 
-.card.secundary {
-    top: 25px;
-    height: 330px;
+/*hora*/
+
+#container_hora {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0;
 }
 
-.card .plus {
-    padding: 1px 10px;
-    border-left: 4px solid #a4ace2;
-    background-color: #b6bbe01f;
-} */
-
-/*******************************************
-*****CONTENT-3******************************
-*******************************************/
-#content-3 {
-    padding-top: 50px;
-    width: 100%;
-    height: auto;
-}
-#content-3 h2 {
-    text-align: center;
-    font-weight: 500;
-    font-family: var(--text);
-}
-#team {
-    padding: 30px 0;
-    width: 80%;
-    height: auto;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    overflow: hidden;
-}
-#team .card {
-    width: 300px;
-    height: 450px;
-    margin: 30px;
-    transition: 0.3s;
-}
-#team .card:hover {
-    transform: scale(115%);
-}
-
-#team .card-body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    padding: 10px;
-}
-
-#team .card-body p {
-    margin-left: 5px;
-}
-#team .card img {
-    width: 100%;
-    height: 100%;
-}
-
-/*******************************************
-*****CONTENT-4******************************
-*******************************************/
-#content-4 {
-    text-align: center;
-    margin: 50px;
-    padding: 50px 0;
-}
-
-#content-4 h2 {
-    font-weight: 500;
-    font-family: var(--text);
-}
-#map {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    width: 80%;
-    min-width: 600px;
-}
-
-/*******************************************
-*****CONTENT-5******************************
-*******************************************/
-#content-5 {
-    background-color: #1F1C33;
-    padding: 100px 0;
-}
-
-#remember {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fafafa;
-}
-#remember h1 {
-    font-family: var(--text);
-}
-#remember button {
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: 1000;
-    cursor: pointer;
-    width: 150px;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
-}
-/*******************************************
-*****  FOOTER  *****************************
-*******************************************/
-footer {
-    padding: 50px 0 5px 0;
-}
-#footer {
-    display: flex;
-    position: relative;
-    align-items: center;
-    left: 50%;
-    transform: translate(-50%);
-    width: 80%;
-}
-
-#footer .copy {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    top: 20px;
-}
-#footer .social {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    width: 10%;
-    display: flex;
-    justify-content: space-between;
-}
-#footer .fa-brands {
-    color: #1F1C33;
-    cursor: pointer;
-
+#container_hora label {
+  background: #fff no-repeat center center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  min-width: 50px;
+  padding: 0;
+  margin: 10px;
+  transition: 0.5s;
+  border-radius: 8px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  font-weight: bolder;
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../items/conexao.php";
+require_once("../items/conexao.php");
 $pdo = conectar();
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ $pdo = conectar();
 
     <div id="createAccount">
       <!-- Fomulário de Cadastro de Cliente -->
-      <h1>Criar uma conta</h1>
+      <h1>Insira seus dados</h1>
       <form method="POST" action="" id="formRegister">
         <div class="row">
           <div class="col">
@@ -154,7 +154,7 @@ if (isset($_POST['BtnEntrar'])) {
   $emailLogin = isset($_POST['emailLogin']) ? $_POST['emailLogin'] : null;
   $senhaLogin = isset($_POST['senhaLogin']) ? ($_POST['senhaLogin']) : null;
 
-  $stmt2 = $pdo->prepare("SELECT email_cliente, senha_cliente, nome_cliente FROM cliente WHERE email_cliente = :email AND senha_cliente = :senha");
+  $stmt2 = $pdo->prepare("SELECT email_cli, senha_cli, nome_cli FROM cliente WHERE email_cli = :email AND senha_cli = :senha");
 
   $stmt2->bindParam(':email', $emailLogin);
   $stmt2->bindParam(':senha', $senhaLogin);
@@ -165,8 +165,8 @@ if (isset($_POST['BtnEntrar'])) {
 
   if ($stmt2->rowCount() > 0) {
     echo "<script>location.href='index.php'</script>";
-    $_SESSION['user'] = $resultLogin['nome_cliente'];
-    $_SESSION['email'] = $resultLogin['email_cliente'];
+    $_SESSION['user'] = $resultLogin['nome_cli'];
+    $_SESSION['email'] = $resultLogin['email_cli'];
     exit;
   } else {
     echo "<script>alert('Usuário ou senha não são válidos.');history.back();</script>";
@@ -184,7 +184,7 @@ if (isset($_POST['btnSalvar'])) {
   $datanasc = isset($_POST['datanasc']) ? $_POST['datanasc'] : null;
   $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : null;
 
-  $sql = "INSERT INTO cliente (nome_cliente, telefone_cliente, email_cliente, senha_cliente, data_nasc, endereco_cliente) VALUES (:n, :t, :e, :s, :d, :en);";
+  $sql = "INSERT INTO cliente (nome_cli, tel_cli, end_cli, dt_nasc_cli, email_cli, senha_cli) VALUES (:n, :t, :en, :d, :e, :s);";
 
   $stmt = $pdo->prepare($sql);  //preparando o sql para receber os dados
 
@@ -197,6 +197,7 @@ if (isset($_POST['btnSalvar'])) {
   $stmt->bindParam(':en', $endereco);
 
   if ($stmt->execute()) {
+    header("location: index.php");
     echo "<script>alert('Cadastro Realizado'); alterContainer();</script>";
   }
 }
