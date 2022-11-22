@@ -11,39 +11,84 @@
 *****HEADER*********************************
 *******************************************/
 #header {
+  position: relative;
   width: 100%;
   overflow-x: hidden;
-  position: relative;
-  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(128, 78, 228);
+  background: linear-gradient(90deg, #431b79, #7531d6, #9f65f7);
+  z-index: 10;
+  overflow: visible;
 }
-#header .container {
-  width: 80%;
-}
-
-.logo-img {
-  height: 140px;
-  width: 140px;
-}
-
-#userArea {
-  display: flex;
+#container-header {
   position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  color: rgb(35, 0, 100);
-  font-weight: bold;
+  padding: 10px;
+  overflow: visible;
 }
 
-#userArea a {
+#user {
+  list-style: none;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+}
+#icon-option i {
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 15px 8px;
+  border-radius: 0 8px 8px 0;
+}
+#user-options {
+  position: absolute;
+  padding: 10px 20px;
+  width: 150px;
+  list-style: none;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  right: 18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#logo {
+  position: absolute;
+  height: 120px;
+  top: -10px;
+}
+
+#user-options li {
+  text-align: end;
+}
+#user-options li:hover {
+  text-align: end;
+  font-weight: bolder;
+}
+#user-options li a {
   text-decoration: none;
-  color: rgb(35, 0, 100);
+  color: #000 !important;
 }
 
-#userArea h5 {
-  margin: 0px 2px;
+/*******************************************
+*****FOOTER*********************************
+*******************************************/
+
+#footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social i {
+  margin: 20px 10px;
 }
 
 /*******************************************
@@ -56,7 +101,7 @@
   flex-direction: column;
 }
 #indexTop {
-  background-color: rgb(128, 78, 228);
+  background: linear-gradient(90deg, #431b79, #7531d6, #9f65f7);
   height: 70vh;
   min-height: 600px;
 }
@@ -76,8 +121,9 @@
 #show h1 {
   font-family: var(--special);
   font-size: 55px;
-  text-shadow: 2px 2px rgb(35, 0, 100);
-  letter-spacing: 5px;
+  text-shadow: 4px 3px rgb(35, 0, 100);
+  letter-spacing: 2px;
+  line-height: 1.1;
 }
 #show h2 {
   color: rgb(35, 0, 100);
@@ -88,7 +134,8 @@
   margin: 0;
 }
 #show p {
-  color: rgb(35, 0, 100);
+  color: #fff;
+  text-shadow: 1px 2px rgb(35, 0, 100);
   font-family: var(--text);
   font-size: 25px;
   margin: 25px 0;
@@ -114,6 +161,7 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 10px;
   background-color: #fff;
+  z-index: 100;
 }
 
 #loginPage h1 {
@@ -140,7 +188,6 @@
   transform: translate(-50%);
   margin: 25px 0;
 }
-
 #loginPage #link {
   text-decoration: underline;
   color: var(--modal-primary);
@@ -164,6 +211,7 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 10px;
   background-color: #fff;
+  z-index: 100;
 }
 #loginPage .back-arrow {
   color: #000;
@@ -217,7 +265,7 @@
 }
 
 /*servico*/
-#container_servico {
+#container-servico {
   position: relative;
   display: flex;
   top: 80px;
@@ -229,7 +277,7 @@
   padding: 30px 0;
 }
 
-#container_servico label {
+#container-servico label {
   background: #fff no-repeat center center;
   cursor: pointer;
   display: flex;
@@ -242,14 +290,13 @@
   margin: 0 10px;
   transition: 0.5s;
   border-radius: 8px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   font-weight: bolder;
 }
 
-
-
 /*funcionario*/
-#container_funcionario {
+#container-funcionario {
   position: relative;
   display: flex;
   top: 80px;
@@ -261,8 +308,7 @@
   padding: 30px 0;
 }
 
-
-#container_funcionario label {
+#container-funcionario label {
   background: #fff no-repeat center center;
   cursor: pointer;
   display: flex;
@@ -275,13 +321,14 @@
   margin: 0 10px;
   transition: 0.5s;
   border-radius: 8px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   font-weight: bolder;
 }
 
 /*dia*/
 
-#container_dia {
+#container-dia {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -294,7 +341,7 @@
   padding: 30px 0;
 }
 
-#container_dia label {
+#container-dia label {
   background: #fff no-repeat center center;
   cursor: pointer;
   display: flex;
@@ -307,13 +354,14 @@
   margin: 10px;
   transition: 0.5s;
   border-radius: 8px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   font-weight: bolder;
 }
 
 /*hora*/
 
-#container_hora {
+#container-hora {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -326,7 +374,7 @@
   padding: 30px 0;
 }
 
-#container_hora label {
+#container-hora label {
   background: #fff no-repeat center center;
   cursor: pointer;
   display: flex;
@@ -339,6 +387,188 @@
   margin: 10px;
   transition: 0.5s;
   border-radius: 8px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   font-weight: bolder;
+}
+/*Finalizar*/
+#container-confirmar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0;
+}
+
+/*******************************************
+*****ADMIN PAGE*****************************
+*******************************************/
+.yellow-button {
+  background-color: rgb(255, 208, 0);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #000;
+}
+.red-button {
+  background-color: rgb(218, 40, 40);
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #000;
+}
+.green-button {
+  background-color: rgb(21, 170, 58);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+  color: #000;
+  font-weight: bolder;
+}
+.flex {
+  display: flex;
+}
+#header-admin {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 65px;
+  background: linear-gradient(90deg, #431b79, #7531d6, #9f65f7);
+  justify-content: center;
+  align-items: center;
+}
+
+#admin-items {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#admin-items a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #fff !important;
+}
+
+#admin-items a li {
+  margin: 0;
+  padding: 0;
+}
+
+#admin-items a:hover {
+  text-decoration: underline 2px;
+  font-weight: bold;
+}
+
+.container-admin {
+  position: relative;
+  z-index: 1;
+  height: 75vh;
+  width: 100%;
+}
+
+.container-edit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 80%;
+  padding: 20px 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.container-edit h1 {
+  margin: 10px 0;
+}
+
+/*Edit Funcionario*/
+#criar-func {
+  position: absolute;
+
+}
+
+#modal-add-servico-func {
+  display: none;
+  position: absolute;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  height: auto;
+  width: 30%;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 1000;
+} 
+
+/*teste*/
+
+#background-element {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-bottom: 100vh solid transparent;
+  border-right: 2500px solid rgb(35, 0, 100);
+  z-index: 1;
+}
+
+#background-element-2 {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-bottom: 50vh solid transparent;
+  border-right: 1800px solid rgb(60, 17, 145);
+  z-index: 2;
+}
+
+#background-element-3 {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-bottom: 85vh solid transparent;
+  border-right: 900px solid rgb(90, 36, 199);
+  z-index: 3;
+}
+#background-element-4 {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-bottom: 60vh solid transparent;
+  border-right: 1000px solid rgb(127, 65, 252);
+  z-index: 4;
 }

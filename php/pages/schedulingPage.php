@@ -47,7 +47,7 @@ $pdo = conectar();
     </script>
 
     <form id="form_agenda" method="get">
-        <div id="container_servico" onchange="sendForm(form_agenda)">
+        <div id="container-servico" onchange="sendForm(form_agenda)">
 
             <?php
             foreach ($servico as $vetor) {
@@ -67,36 +67,34 @@ $pdo = conectar();
                 }
             }
         </script>
-
-        <div id="container_funcionario" onchange="sendForm(form_agenda)">
+        <div id="container-funcionario" onchange="sendForm(form_agenda)">
             <?php
             if (!empty($vars['servico'])) {
                 $sth = $pdo->prepare("SELECT funcionario.* FROM servico_funcionario INNER JOIN funcionario ON servico_funcionario.FK_id_func = funcionario.id_func WHERE servico_funcionario.FK_cod_serv = '" . $vars['servico'] . "' GROUP BY funcionario.id_func;");
                 $sth->execute();
                 $funcionario = $sth->fetchAll(PDO::FETCH_ASSOC);
-
                 foreach ($funcionario as $vetor) { //estrutura dos inputs funcionario
                     echo "<label for='func" . $vetor['id_func'] . "'>";
                     echo "<input type='radio' name='funcionario'  class='func_input' id='func" . $vetor['id_func'] . "' value='" . $vetor['id_func'] . "'>";
                     echo "<span>" . $vetor['nome_func'] . "</span>";
                     echo "</label>";
                 }
-            }
+            }   
             ?>
         </div>
         <script>
             let f_inp = document.getElementsByClassName("func_input"); //armazena todos os inputs do formulário de fubcionario
             for (i = 0; i < f_inp.length; i++) { //loop para deixar um input selecionado após o envio do form
-                if (f_inp[i].value == <?php echo $vars['funcionario'] ?>) {
+                if (f_inp[i].value == <?php echo $_GET['funcionario'] ?>) {
                     f_inp[i].checked = true;
                 }
             }
         </script>
 
-        <div id="container_dia" onchange="sendForm(form_agenda)">
+        <div id="container-dia" onchange="sendForm(form_agenda)">
             <?php
             if (!empty($vars['funcionario'])) {
-                $sth = $pdo->prepare("SELECT agenda.data_agenda FROM agenda INNER JOIN funcionario ON funcionario.id_func = agenda.FK_func_agenda WHERE agenda.FK_func_agenda = '" . $vars['funcionario'] . "' AND agenda.status_agenda = 'L' GROUP BY agenda.data_agenda;");
+                $sth = $pdo->prepare("SELECT agenda.data_agenda FROM agenda INNER JOIN funcionario ON funcionario.id_func = agenda.FK_func_agenda WHERE agenda.FK_func_agenda = '" . $_GET['funcionario'] . "' AND agenda.status_agenda = 'L' GROUP BY agenda.data_agenda;");
                 $sth->execute();
                 $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -119,7 +117,7 @@ $pdo = conectar();
                 }
             </script>
         </div>
-        <div id="container_hora" onchange="sendForm(form_agenda)">
+        <div id="container-hora" onchange="sendForm(form_agenda)">
             <?php
             if (!empty($vars['dia'])) {
                 $sth = $pdo->prepare("SELECT agenda.hora_agenda FROM agenda INNER JOIN funcionario ON funcionario.id_func = agenda.FK_func_agenda WHERE agenda.FK_func_agenda = '" . $vars['funcionario'] . "' AND agenda.status_agenda = 'L' AND agenda.data_agenda LIKE '%" . $dia . "';");
@@ -136,6 +134,25 @@ $pdo = conectar();
                 }
             }
             ?>
+            <script>
+                let h_inp = document.getElementsByClassName("hora_input"); //armazena todos os inputs do formulário de serviço
+                for (i = 0; i < h_inp.length; i++) { //loop para deixar um input selecionado após o envio do form
+                    if (h_inp[i].value == '<?php echo $vars['hora'] ?>') {
+                        h_inp[i].checked = true;
+                    }
+                }
+            </script>
+        </div>
+        <div id="container-confirmar" onchange="sendForm(form_agenda)">
+        <?php
+        if (!empty($vars['dia'])) {
+            echo "<input type='submit' class='btn_' name='send' value='Confirmar'>";
+        }
+        if (isset($vars['send'])) {
+            $sth = $pdo->prepare("UPDATE agenda SET status_agenda = 'O', id_cli_agen ='" . $_SESSION['id_user'] . "', cod_serv_agen ='" . $vars['servico'] . "' WHERE FK_func_agenda ='" . $vars['funcionario'] . "' AND data_agenda LIKE '%". $vars['dia'] . "' AND hora_agenda ='" . $vars['hora'] . "';");
+            $sth->execute();
+        }
+        ?>
         </div>
     </form>
     <!-- $id_func = $vars['funcionario'];
@@ -145,7 +162,7 @@ $pdo = conectar();
         $mes = $data->format('m');
 
         while ($mes == '12') {
-        $sth = $pdo->prepare("INSERT INTO agenda (data_agenda, hora_agenda, FK_func_agenda) VALUES ('$dataFormatada', '$horaFormatada', '$id_func')");
+        $sth = $pdo->prepare("INSERT INTO agenda (data_agenda, hora_agenda, FK_func_agenda, status_agenda) VALUES ('$dataFormatada', '$horaFormatada', '$id_func', 'O')");
         $sth->execute();
         $data->modify('+30 minute');
         $mes = $data->format('m');

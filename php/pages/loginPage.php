@@ -19,8 +19,11 @@ $pdo = conectar();
   <link rel="stylesheet" href="../../css/main.css"> <!-- Custom CSS -->
 </head>
 
-<body style="background-color: rgb(240, 240, 240);">
-  <?php include '../items/header.php' ?>
+<body style="">
+  <div id="background-element"></div>
+  <div id="background-element-2"></div>
+  <div id="background-element-3"></div>
+  <div id="background-element-4"></div>
   <!-- Importando Header -->
   <div id="loginpageTop"></div>
   <div id="loginPage">
@@ -154,7 +157,7 @@ if (isset($_POST['BtnEntrar'])) {
   $emailLogin = isset($_POST['emailLogin']) ? $_POST['emailLogin'] : null;
   $senhaLogin = isset($_POST['senhaLogin']) ? ($_POST['senhaLogin']) : null;
 
-  $stmt2 = $pdo->prepare("SELECT email_cli, senha_cli, nome_cli FROM cliente WHERE email_cli = :email AND senha_cli = :senha");
+  $stmt2 = $pdo->prepare("SELECT id_cli, email_cli, senha_cli, nome_cli FROM cliente WHERE email_cli = :email AND senha_cli = :senha");
 
   $stmt2->bindParam(':email', $emailLogin);
   $stmt2->bindParam(':senha', $senhaLogin);
@@ -167,9 +170,10 @@ if (isset($_POST['BtnEntrar'])) {
     echo "<script>location.href='index.php'</script>";
     $_SESSION['user'] = $resultLogin['nome_cli'];
     $_SESSION['email'] = $resultLogin['email_cli'];
+    $_SESSION['id_user'] = $resultLogin['id_cli'];
     exit;
   } else {
-    echo "<script>alert('Usuário ou senha não são válidos.');history.back();</script>";
+    echo "<script>alert('Usuário ou senha não são válidos.');/script>";
   }
 
 }
