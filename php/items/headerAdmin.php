@@ -9,8 +9,11 @@
         <a href="./adminServicos.php">
             <li>Serviços</li>
         </a>
-        <a href="./adminAgenda.php">
-            <li>Agenda</li>
+        <a href="./adminJornadas.php">
+            <li>Jornadas</li>
+        </a>
+        <a href="./adminAgendas.php">
+            <li>Agendas</li>
         </a>
     </ul>
 </div>

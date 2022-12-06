@@ -12,16 +12,19 @@ $pdo = conectar();
   <title>SistemaAgendamento</title>
   <script src="https://kit.fontawesome.com/52e3096c6b.js" crossorigin="anonymous"></script> <!-- Ícones -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Montserrat:wght@400;700&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+  <link rel="icon" href="../../assets/favicon.png">
   <link rel="stylesheet" href="../../css/main.css"> <!-- Custom CSS -->
 </head>
 
 <body>
-  <?php include '../items/header.php' ?>
-  <?php include '../items/headerAdmin.php'?>
+  <div id="header-master-admin">
+    <?php include '../items/header.php' ?>
+    <?php include '../items/headerAdmin.php' ?>
+  </div>
   <div class="container-admin">
     <?php
     $sth = $pdo->prepare("SELECT id_cli, nome_cli, tel_cli, end_cli, dt_nasc_cli, email_cli FROM cliente");

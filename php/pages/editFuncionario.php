@@ -11,10 +11,11 @@ $pdo = conectar();
     <title>SistemaAgendamento</title>
     <script src="https://kit.fontawesome.com/52e3096c6b.js" crossorigin="anonymous"></script> <!-- Ícones -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Montserrat:wght@400;700&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="../../assets/favicon.png">
     <link rel="stylesheet" href="../../css/main.css"> <!-- Custom CSS -->
 </head>
 
@@ -48,11 +49,11 @@ $pdo = conectar();
     if (isset($_GET['add'])) {
         $add = $_GET['add'];
         $id = $_GET['id'];
-        $sth = $pdo->prepare("INSERT INTO `servico_funcionario`(FK_cod_serv, FK_id_func)". "VALUES('$add', '$id');");
+        $sth = $pdo->prepare("INSERT INTO `servico_funcionario`(FK_cod_serv, FK_id_func)" . "VALUES('$add', '$id');");
         $sth->execute();
     }
     ?>
-    
+
     <div class="container-edit">
         <h1>Informações básicas</h1>
         <table class="table"">
@@ -99,7 +100,7 @@ $pdo = conectar();
                 </tr>
             </thead>
             <tbody>
-            <?php foreach ($servicos_func as $vetor) { ?>
+                <?php foreach ($servicos_func as $vetor) { ?>
                     <tr>
                         <th><?php echo $vetor['cod_serv'] ?></th>
                         <td><?php echo $vetor['nome_serv'] ?></td>
@@ -112,7 +113,7 @@ $pdo = conectar();
                     </tr>
                 <?php } ?>
 
-                </tbody>
+            </tbody>
         </table>
         <spam class="green-button" onclick="callModal()">Adicionar Serviço</spam>
     </div>
@@ -127,8 +128,8 @@ $pdo = conectar();
             <tbody>
                 <?php foreach ($adicionar_servico as $vetor) { ?>
                     <tr>
-                        <th><?php echo $vetor['cod_serv']?></th>
-                        <td><?php echo $vetor['nome_serv']?></td>
+                        <th><?php echo $vetor['cod_serv'] ?></th>
+                        <td><?php echo $vetor['nome_serv'] ?></td>
                         <td><a href="editFuncionario.php?id=<?php echo $_GET['id'] ?>&add=<?php echo $vetor['cod_serv'] ?>"><i class="fa-solid fa-plus green-button"></i></a></td>
                     </tr>
                 <?php } ?>

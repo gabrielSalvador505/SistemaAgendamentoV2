@@ -11,10 +11,11 @@ $pdo = conectar();
     <title>SistemaAgendamento</title>
     <script src="https://kit.fontawesome.com/52e3096c6b.js" crossorigin="anonymous"></script> <!-- Ícones -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Montserrat:wght@400;700&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="../../assets/favicon.png">
     <link rel="stylesheet" href="../../css/main.css"> <!-- Custom CSS -->
 </head>
 
@@ -40,18 +41,18 @@ $pdo = conectar();
             <thead>
                 <tr>
                     <th scope=" col">Id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Telefone</th>
-            <th scope="col">Endereço</th>
-            <th scope="col">Data Nascimento</th>
-            <th scope="col">Email</th>
-            <th scope="col">Ações</th>
-            </tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Data Nascimento</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Ações</th>
+                </tr>
             </thead>
             <form id="edit_cli" method="post">
                 <tbody>
                     <th><?php echo $edit_cli['id_cli'] ?></th>
-                    <td><input type="text" name="name"value="<?php echo $edit_cli['nome_cli'] ?>"></td>
+                    <td><input type="text" name="name" value="<?php echo $edit_cli['nome_cli'] ?>"></td>
                     <td><input style="width: 140px;" name="tel" type="text" value="<?php echo $edit_cli['tel_cli'] ?>"></td>
                     <td><input style="width: 300px;" name="end" type="text" value="<?php echo $edit_cli['end_cli'] ?>"></td>
                     <td><input style="width: 120px;" name="dt_nasc" type="date" value="<?php echo $edit_cli['dt_nasc_cli'] ?>"></td>

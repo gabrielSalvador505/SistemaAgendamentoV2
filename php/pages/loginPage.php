@@ -12,10 +12,11 @@ $pdo = conectar();
   <title>Login Agendamento</title>
   <script src="https://kit.fontawesome.com/52e3096c6b.js" crossorigin="anonymous"></script> <!-- Ícones -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Montserrat:wght@400;700&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+  <link rel="icon" href="../../assets/favicon.png">
   <link rel="stylesheet" href="../../css/main.css"> <!-- Custom CSS -->
 </head>
 
@@ -29,7 +30,7 @@ $pdo = conectar();
   <div id="loginPage">
     <div id="login">
       <!-- Fomulário de Login -->
-      <h1>Entrar</h1>
+      <h1>Acesse sua conta</h1>
       <form method="POST">
         <div class="form-group">
           <label for="emailLogin">Email</label>
@@ -38,20 +39,17 @@ $pdo = conectar();
         <div class="form-group">
           <label for="passLogin">Senha</label>
           <input type="password" class="form-control" id="passLogin" name="senhaLogin" placeholder="Senha" required />
-          <a href="#" id="passHelp" class="form-text text-muted">Esqueceu sua senha?</a>
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" name="check" id="check">
-          <label for="check" id="label-check">Manter conectado</label>
+        <div class="buttons-area">
+          <button type="submit" id="login-btn" class="btn__ simple-purple-button" name="BtnEntrar">Confirmar</button>
+          <a onclick="alterContainer()" id="link"><button id="to-create-btn" class="btn_ simple-white-button">Criar uma</button></a></small>
         </div>
-        <button type="submit" class="btn__" name="BtnEntrar">Confirmar</button>
-        <small class="form-text text-muted text-center">Não possui uma conta? <a onclick="alterContainer()" id="link">Crie uma</a></small>
       </form>
     </div>
 
     <div id="createAccount">
       <!-- Fomulário de Cadastro de Cliente -->
-      <h1>Insira seus dados</h1>
+      <h1>Cadastrar-se</h1>
       <form method="POST" action="" id="formRegister">
         <div class="row">
           <div class="col">
@@ -111,8 +109,10 @@ $pdo = conectar();
             </div>
           </div>
         </div>
-        <button type="submit" name="btnSalvar" class="btn__">Criar</button>
-        <small class="form-text text-muted text-center">Já possui uma conta? <a onclick="alterContainer()" id="link">Entrar</a></small>
+        <div class="buttons-area">
+          <button type="submit" name="btnSalvar" class="btn__ simple-purple-button">Criar</button>
+          <button onclick="alterContainer()" class="btn_ simple-white-button">já possuo conta</button>
+        </div>
       </form>
     </div>
   </div>
@@ -137,14 +137,13 @@ $pdo = conectar();
     const atualizarTelefone = (event) => {
       let input = event.target;
       input.value = mascaraTelefone(input.value);
-      console.log(input.value);
     }
 
     const mascaraTelefone = (value) => {
       if (!value) return "";
-      value = value.replace(/\D/g,'');
+      value = value.replace(/\D/g, '');
       value = value.replace(/(\d{2})(\d)/, "($1) $2");
-      value = value.replace(/(\d)(\d{4})$/,"$1-$2");
+      value = value.replace(/(\d)(\d{4})$/, "$1-$2");
       return value;
     }
   </script>
@@ -157,25 +156,38 @@ if (isset($_POST['BtnEntrar'])) {
   $emailLogin = isset($_POST['emailLogin']) ? $_POST['emailLogin'] : null;
   $senhaLogin = isset($_POST['senhaLogin']) ? ($_POST['senhaLogin']) : null;
 
-  $stmt2 = $pdo->prepare("SELECT id_cli, email_cli, senha_cli, nome_cli FROM cliente WHERE email_cli = :email AND senha_cli = :senha");
+  $stmtFunc = $pdo->prepare("SELECT id_func, email_func, senha_func, nome_func, nivel_acesso FROM funcionario WHERE email_func = :email AND senha_func = :senha");
 
-  $stmt2->bindParam(':email', $emailLogin);
-  $stmt2->bindParam(':senha', $senhaLogin);
+  $stmtFunc->bindParam(':email', $emailLogin);
+  $stmtFunc->bindParam(':senha', $senhaLogin);
+  $stmtFunc->execute();
 
-  $stmt2->execute();
-
-  $resultLogin = $stmt2->fetch();
-
-  if ($stmt2->rowCount() > 0) {
+  if ($stmtFunc->rowCount() > 0) {
+    $resultLogin = $stmtFunc->fetch(PDO::FETCH_ASSOC);
     echo "<script>location.href='index.php'</script>";
-    $_SESSION['user'] = $resultLogin['nome_cli'];
-    $_SESSION['email'] = $resultLogin['email_cli'];
-    $_SESSION['id_user'] = $resultLogin['id_cli'];
+    $_SESSION['user'] = $resultLogin['nome_func'];
+    $_SESSION['email'] = $resultLogin['email_func'];
+    $_SESSION['id_user'] = $resultLogin['id_func'];
+    $_SESSION['acesso'] = $resultLogin['nivel_acesso'];
     exit;
   } else {
-    echo "<script>alert('Usuário ou senha não são válidos.');/script>";
-  }
+    $stmtCli = $pdo->prepare("SELECT id_cli, email_cli, senha_cli, nome_cli FROM cliente WHERE email_cli = :email AND senha_cli = :senha");
 
+    $stmtCli->bindParam(':email', $emailLogin);
+    $stmtCli->bindParam(':senha', $senhaLogin);
+    $stmtCli->execute();
+
+    if ($stmtCli->rowCount() > 0) {
+      $resultLogin = $stmtCli->fetch(PDO::FETCH_ASSOC);
+      echo "<script>location.href='index.php'</script>";
+      $_SESSION['user'] = $resultLogin['nome_cli'];
+      $_SESSION['email'] = $resultLogin['email_cli'];
+      $_SESSION['id_user'] = $resultLogin['id_cli'];
+      exit;
+    } else {
+      echo "<script>alert('Usuário ou senha não são válidos.');/script>";
+    }
+  }
 }
 ?>
 
@@ -202,7 +214,7 @@ if (isset($_POST['btnSalvar'])) {
 
   if ($stmt->execute()) {
     header("location: index.php");
-    echo "<script>alert('Cadastro Realizado'); alterContainer();</script>";
+    echo "<script>alert('Cadastro Realizado');</script>";
   }
 }
 ?>

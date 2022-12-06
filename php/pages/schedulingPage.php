@@ -12,10 +12,11 @@ $pdo = conectar();
     <title>Agendamento</title>
     <script src="https://kit.fontawesome.com/52e3096c6b.js" crossorigin="anonymous"></script> <!-- Ícones -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gantari:wght@100;300;500&family=Lobster&family=Montserrat:wght@400;700&family=Passion+One:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+    <link rel="icon" href="../../assets/favicon.png">
     <link rel="stylesheet" href="../../css/main.css"> <!-- Custom CSS -->
 </head>
 
@@ -79,7 +80,7 @@ $pdo = conectar();
                     echo "<span>" . $vetor['nome_func'] . "</span>";
                     echo "</label>";
                 }
-            }   
+            }
             ?>
         </div>
         <script>
@@ -144,32 +145,17 @@ $pdo = conectar();
             </script>
         </div>
         <div id="container-confirmar" onchange="sendForm(form_agenda)">
-        <?php
-        if (!empty($vars['dia'])) {
-            echo "<input type='submit' class='btn_' name='send' value='Confirmar'>";
-        }
-        if (isset($vars['send'])) {
-            $sth = $pdo->prepare("UPDATE agenda SET status_agenda = 'O', id_cli_agen ='" . $_SESSION['id_user'] . "', cod_serv_agen ='" . $vars['servico'] . "' WHERE FK_func_agenda ='" . $vars['funcionario'] . "' AND data_agenda LIKE '%". $vars['dia'] . "' AND hora_agenda ='" . $vars['hora'] . "';");
-            $sth->execute();
-        }
-        ?>
+            <?php
+            if (!empty($vars['dia'])) {
+                echo "<input type='submit' class='btn_' name='send' value='Confirmar'>";
+            }
+            if (isset($vars['send'])) {
+                $sth = $pdo->prepare("UPDATE agenda SET status_agenda = 'O', id_cli_agen ='" . $_SESSION['id_user'] . "', cod_serv_agen ='" . $vars['servico'] . "' WHERE FK_func_agenda ='" . $vars['funcionario'] . "' AND data_agenda LIKE '%" . $vars['dia'] . "' AND hora_agenda ='" . $vars['hora'] . "';");
+                $sth->execute();
+            }
+            ?>
         </div>
     </form>
-    <!-- $id_func = $vars['funcionario'];
-        $data = new DateTime('01-12-2022');
-        $dataFormatada = $data->format('Y-m-d');
-        $horaFormatada = $data->format('H:i:s');
-        $mes = $data->format('m');
-
-        while ($mes == '12') {
-        $sth = $pdo->prepare("INSERT INTO agenda (data_agenda, hora_agenda, FK_func_agenda, status_agenda) VALUES ('$dataFormatada', '$horaFormatada', '$id_func', 'O')");
-        $sth->execute();
-        $data->modify('+30 minute');
-        $mes = $data->format('m');
-        $dataFormatada = $data->format('Y-m-d');
-        $horaFormatada = $data->format('H:i:s');
-        } -->
-
     <script src="../../js/jquery-slim.min.js"></script> <!-- JavaScript do Bootstrap -->
     <script src="../../js/poopper.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
